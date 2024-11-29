@@ -30,6 +30,15 @@ const customStyles = `
   }
 `;
 
+interface CalculationResult {
+  finalEstimatedTime: string;
+  firstTransitPeriod: string;
+  nextSkyTrain: {
+    departureTime: string;
+  };
+  secondTransitPeriod: string;
+}
+
 export default function Home() {
   const [stations, setStations] = useState<string[]>([]);
   const [departureTimes, setDepartureTimes] = useState<string[]>([]);
@@ -40,7 +49,7 @@ export default function Home() {
     departureTime: "",
     expectedTimeAtCheckInCounter: "",
   });
-  const [calculationResult, setCalculationResult] = useState<any>(null);
+  const [calculationResult, setCalculationResult] = useState<CalculationResult | null>(null);
   const [showResults, setShowResults] = useState(false);
   const [lastCalculation, setLastCalculation] = useState<string>("");
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
@@ -51,7 +60,6 @@ export default function Home() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(true);
   const [showTwoColumns, setShowTwoColumns] = useState(false);
-  const [showInfoColumn, setShowInfoColumn] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
   const t = languages[currentLanguage]; // Get current language translations
   const [showAccordion, setShowAccordion] = useState(false);
@@ -219,14 +227,13 @@ export default function Home() {
     if (isLoading) {
       setIsAnimationVisible(true);
     } else if (!isLoading && isAnimationVisible) {
-      // When loading finishes, wait 3 seconds before hiding animation
       const timer = setTimeout(() => {
         setIsAnimationVisible(false);
       }, 3000);
       
       return () => clearTimeout(timer);
     }
-  }, [isLoading]);
+  }, [isLoading, isAnimationVisible]);
 
   return (
     <main
@@ -551,7 +558,7 @@ export default function Home() {
       <ResultModal
         isOpen={isModalOpen && calculationResult !== null}
         onClose={() => setIsModalOpen(false)}
-        result={calculationResult}
+        result={calculationResult!}
         statusMessage={statusMessage}
         language={currentLanguage}
       />

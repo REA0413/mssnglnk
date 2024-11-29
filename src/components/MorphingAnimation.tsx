@@ -41,7 +41,7 @@ export default function MorphingAnimation({ isVisible, onAnimationComplete }: Mo
     } else {
       progress.set(0);
     }
-  }, [isVisible, onAnimationComplete]);
+  }, [isVisible, onAnimationComplete, progress]);
 
   return (
     <motion.div
