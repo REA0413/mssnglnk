@@ -25,13 +25,9 @@
   font-style: normal;
 }
 
-/* body {
-  font-family: 'Johnston100', sans-serif; /* Fallback to sans-serif */
-/* } */ */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Johnston100', sans-serif; /* Fallback to sans-serif */
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Johnston100', sans-serif;
 }
