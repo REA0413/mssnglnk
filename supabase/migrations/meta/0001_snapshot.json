@@ -1,0 +1,135 @@
+{
+  "id": "bcd4317c-f702-4250-9475-f93203f5d1b0",
+  "prevId": "a4c5eec0-2c61-4cd0-b1a9-90f35febb0c2",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.airportTrainSchedule": {
+      "name": "airportTrainSchedule",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "departureStation": {
+          "name": "departureStation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "arrivalStation": {
+          "name": "arrivalStation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "departureTime": {
+          "name": "departureTime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "arrivalTime": {
+          "name": "arrivalTime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.skyTrainSchedule": {
+      "name": "skyTrainSchedule",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "departureStationSky": {
+          "name": "departureStationSky",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "arrivalStationSky": {
+          "name": "arrivalStationSky",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "departureTimeSky": {
+          "name": "departureTimeSky",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "arrivalTimeSky": {
+          "name": "arrivalTimeSky",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
