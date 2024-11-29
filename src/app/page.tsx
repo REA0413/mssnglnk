@@ -10,8 +10,6 @@ import {
 import { FiInfo, FiLoader, FiMail } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import TimePicker from "react-time-picker";
-import "react-time-picker/dist/TimePicker.css";
-import "react-clock/dist/Clock.css";
 import ResultModal from '../components/ResultModal';
 import WelcomeModal from '../components/WelcomeModal';
 import AnimatedGallery from '../components/AnimatedGallery';

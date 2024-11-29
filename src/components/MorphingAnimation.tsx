@@ -22,20 +22,22 @@ export default function MorphingAnimation({ isVisible, onAnimationComplete }: Mo
 
   useEffect(() => {
     if (isVisible) {
-      // First set progress to 0 to ensure train is visible
-      progress.set(0);
       
       // Add a delay before starting the animation
       const timeout = setTimeout(() => {
-        animate(progress, 1, {
-          duration: 1,
+        const animation = animate(progress, 1, {
+          duration: 0.8,
           ease: "easeInOut",
           onComplete: () => {onAnimationComplete()}
         });
-      }, 1000); // Wait 1 second before starting morph animation
+        
+        // Clean up both the timeout and the animation
+        return () => {
+          clearTimeout(timeout);
+          animation.stop();
+        };
+      }, 100);
       
-      // Cleanup timeout if component unmounts
-      return () => clearTimeout(timeout);
     } else {
       progress.set(0);
     }
