@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@motionone/utils": "^10.18.0",
+    "@vercel/analytics": "^1.4.1",
     "date-fns": "^4.1.0",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.36.4",
