@@ -17,6 +17,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Jakarta Train Station x Sky Train Travel Time Estimator",
   description: "A tool to answer the question: Can I make it to the airport on time if I take the Airport Train?",
+  verification: {
+    google: 'A1RAIcX1hfNGRn-aqHOXd17EQnjMvEGd1GXGBlEZhas',
+  },
 };
 
 export default function RootLayout({
